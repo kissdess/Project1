@@ -1,0 +1,28 @@
+using MyProject.Items;
+using UnityEngine;
+
+namespace MyProject.Npcs.Occupations.Vendors
+{
+
+    public class VendorData
+    {
+        // private IItemContainer buyingItemContainer = null;
+        // private IItemContainer sellingItemContainer = null;
+
+        public VendorData(IItemContainer buyingItemContainer, IItemContainer sellingItemContainer)
+        {
+            itemContainers[0] = buyingItemContainer;
+            itemContainers[1] = sellingItemContainer;
+        }
+
+        private IItemContainer[] itemContainers = new IItemContainer[2];
+
+        public bool IsFirstContainerBuying { get; set; } = true;
+
+        public IItemContainer BuyingItemContainer => IsFirstContainerBuying ? itemContainers[0] : itemContainers[1];
+        public IItemContainer SellingItemContainer => IsFirstContainerBuying ? itemContainers[1] : itemContainers[0];
+
+
+    }
+
+}

@@ -1,0 +1,22 @@
+{
+    "items": [
+        {
+            "ID": "0",
+            "itemNameText": "Apple",
+            "attack": "10",
+            "totalExp": "0"
+        },
+        {
+            "ID": "1",
+            "maxHp": "250",
+            "attack": "15",
+            "totalExp": "10"
+        },
+        {
+            "ID": "2",
+            "maxHp": "300",
+            "attack": "20",
+            "totalExp": "20"
+        }
+    ]
+}
