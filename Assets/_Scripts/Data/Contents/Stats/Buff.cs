@@ -11,7 +11,6 @@ public enum BuffType
     ManaPoint
 }
 
-
 [CreateAssetMenu(fileName = "New Buff", menuName = "Buff System/Buff")]
 public class Buff : ScriptableObject
 {

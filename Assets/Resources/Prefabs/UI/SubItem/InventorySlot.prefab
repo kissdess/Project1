@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 5203301471066196948}
   - component: {fileID: 4677125159893900275}
   - component: {fileID: 4404267779931319213}
+  - component: {fileID: 7212500752261207667}
   m_Layer: 0
   m_Name: InventorySlot
   m_TagString: Untagged
@@ -356,6 +357,9 @@ MonoBehaviour:
   itemIconImage: {fileID: 7808389833389886443}
   inventory: {fileID: 0}
   itemQuantityText: {fileID: 9010788758253879405}
+  player: {fileID: 0}
+  equippedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  defaultColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &4404267779931319213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +378,34 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4677125159893900275}
         m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
+        m_MethodName: UpdateSlotUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7212500752261207667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7801840713314329133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c77d0bbf88749e1bb0d2f4e55370bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 007493a47310f4ae3b3c2fa3bf5abd70, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4677125159893900275}
+        m_TargetAssemblyTypeName: MyProject.Items.Inventories.InventorySlot, Assembly-CSharp
         m_MethodName: UpdateSlotUI
         m_Mode: 1
         m_Arguments:

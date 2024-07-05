@@ -181,6 +181,52 @@ namespace MyProject.Items.Inventories
 
             return false;
         }
+
+        public bool UseItem(int slotIndex, PlayerController controller)
+        {
+            ItemSlot slot = GetSlotByIndex(slotIndex);
+            if (slot.item is ConsumableItem consumableItem)
+            {
+                if (consumableItem.Use(controller))
+                {
+                    slot.quantity--;
+                    if (slot.quantity == 0)
+                    {
+                        RemoveAt(slotIndex);
+                    }
+                    onInventoryItemsUpdated.Invoke();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // TODO : EquipItem, UnequipItem 구현 
+        // public void EquipItem(int slotIndex)
+        // {
+        //     ItemSlot slot = GetSlotByIndex(slotIndex);
+        //     if (slot.item is EquippableItem equippableItem)
+        //     {
+        //         if (!equippableItem.IsEquipped)
+        //         {
+        //             equippableItem.Equip();
+        //             onInventoryItemsUpdated.Invoke();
+        //         }
+        //     }
+        // }
+
+        // public void UnequipItem(int slotIndex)
+        // {
+        //     ItemSlot slot = GetSlotByIndex(slotIndex);
+        //     if (slot.item is EquippableItem equippableItem)
+        //     {
+        //         if (equippableItem.IsEquipped)
+        //         {
+        //             equippableItem.Unequip();
+        //             onInventoryItemsUpdated.Invoke();
+        //         }
+        //     }
+        // }
     }
 }
 

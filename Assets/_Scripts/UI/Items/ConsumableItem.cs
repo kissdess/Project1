@@ -23,9 +23,11 @@ namespace MyProject.Items
             return builder.ToString();
         }
 
-        public void Use()
+        public bool Use(PlayerController playerController)
         {
             Debug.Log($"Drinking {Name}");
+            return true;
         }
     }
+
 }

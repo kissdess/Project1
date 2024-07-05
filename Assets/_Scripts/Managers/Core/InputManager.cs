@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InputManager
 {
-    //public Action KeyAction = null;
+    public Action KeyAction = null;
     public Action<Define.MouseEvent> MouseAction = null;
 
     bool _pressed = false;
@@ -11,7 +11,6 @@ public class InputManager
 
     public void OnUpdate()
     {
-
         if (MouseAction != null)
         {
             if (Input.GetMouseButton(0))
@@ -35,14 +34,17 @@ public class InputManager
                 _pressed = false;
                 _pressedTime = 0;
             }
+        }
 
-
+        if (Input.anyKey && KeyAction != null)
+        {
+            KeyAction.Invoke();
         }
     }
 
     public void Clear()
     {
-        //KeyAction = null;
+        KeyAction = null;
         MouseAction = null;
     }
 

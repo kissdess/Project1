@@ -9,7 +9,7 @@ namespace MyProject.Items
     public abstract class ItemSlotUI : MonoBehaviour, IDropHandler
     {
         [Header("UI Components")]
-        [SerializeField] private Image itemIconImage = null; // 아이템 아이콘을 표시하는 Image 컴포넌트입니다.
+        [SerializeField] private Image itemIconImage = null;
 
         public int SlotIndex { get; private set; }
 

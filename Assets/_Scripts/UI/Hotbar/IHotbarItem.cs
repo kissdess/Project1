@@ -7,7 +7,6 @@ namespace MyProject.Items.Hotbars
     {
         string Name { get; }
         Sprite Icon { get; }
-        void Use();
     }
 }
 

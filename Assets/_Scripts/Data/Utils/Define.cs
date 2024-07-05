@@ -71,4 +71,21 @@ public class Define
         Interaction,
     }
 
+    public enum Interfaces
+    {
+        Hotbar = 3,
+        Inventory = 0,
+        Equipment = 1,
+        Status = 3,
+    }
+
+    public enum EquipmentType
+    {
+        Head,
+        Chest,
+        LeftHand,
+        RightHand,
+        Legs,
+        Accessory
+    }
 }

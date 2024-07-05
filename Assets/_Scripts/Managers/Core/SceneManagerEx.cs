@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneManagerEx
 {
-    public BaseScene CurrnetScene { get { return GameObject.FindObjectOfType<BaseScene>(); } }
+    public BaseScene CurrnetScene { get { return Object.FindFirstObjectByType<BaseScene>(); } }
 
 
     public void LoadScene(Define.Scene type)

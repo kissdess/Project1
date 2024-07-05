@@ -39,7 +39,7 @@ namespace MyProject.Items.Hotbars
             if (itemDragHandler == null) { return; }
 
             InventorySlot inventorySlot = itemDragHandler.ItemSlotUI as InventorySlot;
-            if (inventorySlot != null)
+            if (inventorySlot != null && !(inventorySlot.ItemSlot.item is EquippableItem))
             {
                 SlotItem = inventorySlot.ItemSlot.item;
                 return;

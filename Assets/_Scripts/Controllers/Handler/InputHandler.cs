@@ -3,8 +3,12 @@ using UnityEngine.EventSystems;
 
 public class InputHandler : MonoBehaviour
 {
+    [SerializeField] private GameObject[] PlayerUI = new GameObject[2];
     private PlayerController _playerController;
     private int _mask;
+    private bool _isInventoryOpen = false;
+    private bool _isDraggingItem = false;
+
 
     public void Initialize(PlayerController playerController)
     {
@@ -13,17 +17,35 @@ public class InputHandler : MonoBehaviour
 
         Managers.Input.MouseAction -= OnMouseEvent;
         Managers.Input.MouseAction += OnMouseEvent;
+        Managers.Input.KeyAction -= OnKeyEvent;
+        Managers.Input.KeyAction += OnKeyEvent;
+
+    }
+
+    public void SetDraggingItemState(bool isDragging)
+    {
+        _isDraggingItem = isDragging;
     }
 
     public void OnMouseEvent(Define.MouseEvent evt)
     {
-        if (_playerController.State == Define.State.Skill)
+        if (_isDraggingItem)
         {
-            if (evt == Define.MouseEvent.PointerUp)
-                _playerController.StopSkill = true;
+            _playerController.State = Define.State.Idle;
             return;
         }
 
+        // 스킬 사용 중일 때의 처리
+        if (_playerController.State == Define.State.Skill)
+        {
+            if (evt == Define.MouseEvent.PointerUp)
+            {
+                _playerController.StopSkill = true;
+            }
+            return;
+        }
+
+        // Idle 또는 Moving 상태일 때 마우스 이벤트 처리
         if (_playerController.State == Define.State.Idle || _playerController.State == Define.State.Moving)
         {
             OnMouseEvent_IdleRun(evt);
@@ -32,6 +54,8 @@ public class InputHandler : MonoBehaviour
 
     private void OnMouseEvent_IdleRun(Define.MouseEvent evt)
     {
+
+
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 100.0f, _mask))
         {
             switch (evt)
@@ -47,20 +71,18 @@ public class InputHandler : MonoBehaviour
                     break;
             }
         }
+
+
     }
 
     private void HandlePointerDown(RaycastHit hit)
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            _playerController.State = Define.State.Idle;
-            return;
-        }
 
         _playerController.State = Define.State.Moving;
         _playerController.SetDestination(hit.point);
         _playerController.StopSkill = false;
         _playerController.SetLockTarget(hit.collider.gameObject.layer == (int)Define.Layer.Monster ? hit.collider.gameObject : null);
+
     }
 
     private void HandlePress(RaycastHit hit)
@@ -73,15 +95,29 @@ public class InputHandler : MonoBehaviour
 
     private void HandlePointerUp(RaycastHit hit)
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            _playerController.State = Define.State.Idle;
-        }
-
         if (_playerController.LockTarget == null)
         {
             _playerController.State = Define.State.Idle;
         }
         _playerController.StopSkill = true;
     }
+
+    private void OnKeyEvent()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (PlayerUI != null)
+            {
+                _isInventoryOpen = !_isInventoryOpen;
+                PlayerUI[(int)Define.Interfaces.Inventory].SetActive(_isInventoryOpen);
+                PlayerUI[(int)Define.Interfaces.Equipment].SetActive(_isInventoryOpen);
+            }
+            else
+            {
+                Debug.LogError("InventoryUI is not assigned in the Inspector!");
+            }
+        }
+    }
+
+
 }

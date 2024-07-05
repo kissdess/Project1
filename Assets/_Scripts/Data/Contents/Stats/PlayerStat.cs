@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MyProject.Items;
 using UnityEngine;
 
 public class PlayerStat : Stat
@@ -10,7 +11,6 @@ public class PlayerStat : Stat
     protected int _gold;
 
     private Coroutine buffCoroutine;
-
 
     #region Exp
     public int Exp
@@ -42,7 +42,7 @@ public class PlayerStat : Stat
             }
         }
     }
-    #endregion
+    #endregion    
 
     public int Gold { get { return _gold; } set { _gold = value; } }
 
@@ -89,6 +89,18 @@ public class PlayerStat : Stat
         );
     }
 
+    public void AddStats(int attackBonus, int defenseBonus)
+    {
+        _attack += attackBonus;
+        _defense += defenseBonus;
+    }
+
+    public void RemoveStats(int attackBonus, int defenseBonus)
+    {
+        _attack -= attackBonus;
+        _defense -= defenseBonus;
+    }
+
 
     private IEnumerator RemoveBuffAfterDelay(Buff buff, float delay)
     {
@@ -112,5 +124,5 @@ public class PlayerStat : Stat
 
         Debug.Log("Player's buff has worn off");
     }
-
 }
+

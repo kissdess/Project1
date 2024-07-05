@@ -34,13 +34,13 @@ public class PlayerController : BaseController
 
     private void InitializeHandlers()
     {
-        _inputHandler = gameObject.AddComponent<InputHandler>();
+        _inputHandler = GetComponent<InputHandler>();
         _inputHandler.Initialize(this);
 
-        _movementHandler = gameObject.AddComponent<MovementHandler>();
+        _movementHandler = GetComponent<MovementHandler>();
         _movementHandler.Initialize(this, _characterController, _stat);
 
-        _combatHandler = gameObject.AddComponent<CombatHandler>();
+        _combatHandler = GetComponent<CombatHandler>();
         _combatHandler.Initialize(this, _stat, _slashes);
     }
 

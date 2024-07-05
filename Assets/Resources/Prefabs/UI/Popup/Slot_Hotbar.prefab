@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3397008053151437941}
   - component: {fileID: 9079137168990438385}
-  - component: {fileID: 3503347160686721600}
-  - component: {fileID: 6664540709166416643}
   - component: {fileID: 4652377177110373610}
+  - component: {fileID: 6664540709166416643}
+  - component: {fileID: 3503347160686721600}
   m_Layer: 0
   m_Name: Slot_Hotbar
   m_TagString: Untagged
@@ -48,49 +48,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2939781182627639127}
   m_CullTransparentMesh: 0
---- !u!114 &3503347160686721600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2939781182627639127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c87c91218244c8bab1cb5b7a3e0fd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemIconImage: {fileID: 726220012362120115}
-  inventory: {fileID: 0}
-  itemQuantityText: {fileID: 6287374690064012909}
---- !u!114 &6664540709166416643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2939781182627639127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c77d0bbf88749e1bb0d2f4e55370bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 332653943f046497c8fa708ce86fb0d1, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3503347160686721600}
-        m_TargetAssemblyTypeName: MyProject.Items.Hotbars.HotbarSlot, Assembly-CSharp
-        m_MethodName: UpdateSlotUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4652377177110373610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +78,49 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6664540709166416643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939781182627639127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c77d0bbf88749e1bb0d2f4e55370bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 332653943f046497c8fa708ce86fb0d1, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3503347160686721600}
+        m_TargetAssemblyTypeName: MyProject.Items.Hotbars.HotbarSlot, Assembly-CSharp
+        m_MethodName: UpdateSlotUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3503347160686721600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939781182627639127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c87c91218244c8bab1cb5b7a3e0fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemIconImage: {fileID: 726220012362120115}
+  inventory: {fileID: 0}
+  itemQuantityText: {fileID: 6287374690064012909}
 --- !u!1 &3258677611626043227
 GameObject:
   m_ObjectHideFlags: 0

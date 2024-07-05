@@ -1,5 +1,3 @@
-using MyProject.Items;
-using MyProject.TooltipUI;
 using UnityEngine;
 
 
