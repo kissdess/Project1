@@ -3730,6 +3730,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1310636691}
     - target: {fileID: 8295302183553950011, guid: 46261fa99b1a5445bb5a63c481c0575c, type: 3}
+      propertyPath: equipmentController
+      value: 
+      objectReference: {fileID: 1856901072}
+    - target: {fileID: 8295302183553950011, guid: 46261fa99b1a5445bb5a63c481c0575c, type: 3}
       propertyPath: 'equipmentSlots.Array.data[0]'
       value: 
       objectReference: {fileID: 1968112425}
@@ -14370,6 +14374,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf172227b2214aaaaf96ff848f6fd7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1673713879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2730403129285524285, guid: 46261fa99b1a5445bb5a63c481c0575c, type: 3}
+  m_PrefabInstance: {fileID: 560589153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673713856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c512497d90bd043cb8cfc0fb3d6cf42b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1675602672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15852,6 +15867,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1856901072 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5015276559739607910, guid: 00ed1289cc62f46aba9525d4b1a40de2, type: 3}
+  m_PrefabInstance: {fileID: 1950913957}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b764420d5109f47d6938aefc4343e254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1858682868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16507,6 +16533,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 514732835058344164, guid: 00ed1289cc62f46aba9525d4b1a40de2, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1673713873}
+    - target: {fileID: 514732835058344164, guid: 00ed1289cc62f46aba9525d4b1a40de2, type: 3}
       propertyPath: onEquipmentUpdated.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -16534,6 +16564,14 @@ PrefabInstance:
       propertyPath: onEquipmentUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2162954730026776299, guid: 00ed1289cc62f46aba9525d4b1a40de2, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1673713873}
+    - target: {fileID: 2282600148447919890, guid: 00ed1289cc62f46aba9525d4b1a40de2, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1673713873}
     - target: {fileID: 2481509831917016018, guid: 00ed1289cc62f46aba9525d4b1a40de2, type: 3}
       propertyPath: slotType
       value: 1
@@ -16594,6 +16632,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5015276559739607910, guid: 00ed1289cc62f46aba9525d4b1a40de2, type: 3}
+      propertyPath: playerStat
+      value: 
+      objectReference: {fileID: 1673713879}
     - target: {fileID: 5539096558193051821, guid: 00ed1289cc62f46aba9525d4b1a40de2, type: 3}
       propertyPath: slotType
       value: 2
@@ -16662,6 +16704,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7802495351588752420, guid: 00ed1289cc62f46aba9525d4b1a40de2, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1673713873}
+    - target: {fileID: 8118460907154910612, guid: 00ed1289cc62f46aba9525d4b1a40de2, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1673713873}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
