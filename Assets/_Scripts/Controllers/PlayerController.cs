@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UIElements;
 
 public class PlayerController : BaseController
 {
     [SerializeField] private PlayerStat _stat;
     [SerializeField] private List<Slashes> _slashes;
+
 
     public bool StopSkill { get; set; } = false;
 
