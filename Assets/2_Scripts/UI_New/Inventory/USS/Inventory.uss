@@ -1,0 +1,98 @@
+.container {
+    flex-grow: 1;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    color: rgb(255, 197, 0);
+}
+
+.inventory {
+    background-image: url('/Assets/Resources/Images/UI/Inventory/SF Window.psd');
+    width: 320px;
+    padding: 35px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-height: 500px;
+    flex-grow: 1;
+}
+
+.inventoryHeader {
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    width: 350px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/Assets/Resources/Images/UI/Inventory/SF Title.psd');
+    -unity-slice-scale: 0.5;
+}
+
+Label {
+    font-size: 24px;
+}
+
+.inventoryFrame {
+    position: absolute;
+    top: -10px;
+    left: -17px;
+    width: 326px;
+    height: 520px;    
+    -unity-slice-scale: 0.5;
+}
+
+.slotsContainer {
+    flex-grow: 1;
+    padding-top: 40px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+.slot {
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    flex: 0 0 auto;
+}
+
+.slotFrame {    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 55px;
+    border-width: 0px;
+    background-image: url('/Assets/Resources/Images/UI/Inventory/SF Generic.psd');
+    -unity-slice-scale: 0.8;
+}
+
+.slotIcon {
+    padding: 4px;
+    flex-shrink: 0;
+    flex-grow: 1;
+    
+}
+
+.stackCount {
+    position: absolute;
+    color: white;
+    bottom: 0;
+    right: 0;
+    font-size: 18px;
+}
+
+.ghostIcon {
+    visibility: hidden;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: none;
+}
